@@ -1,7 +1,7 @@
 ---
-  - name: Disable SELinux
-    selinux:
-      state: disabled
+#  - name: Disable SELinux
+#    selinux:
+#      state: disabled
 
   - name: Ensure environment file exists
     file:
@@ -26,12 +26,8 @@
   - name: Enable EPEL
     yum: name=epel-release
 
-#  - name: Install jpackage repo
-#    template: src=jpackage.j2 dest=/etc/yum.repos.d/jpackage-generic.repo
-
   - name: Install Spacewalk repository
     yum: name=https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9/epel-7-x86_64/00830557-spacewalk-repo/spacewalk-repo-2.9-4.el7.noarch.rpm
-    #name=http://yum.spacewalkproject.org/2.4/RHEL/{{ansible_distribution_major_version}}/x86_64/spacewalk-repo-2.4-3.el{{ansible_distribution_major_version}}.noarch.rpm
 
   - name: Install Spacewalk-setup-postgresql
     yum: name=spacewalk-setup-postgresql state=present
@@ -48,11 +44,11 @@
   - name: Install yum versionlock
     yum: name=yum-plugin-versionlock state=present
 
-  - name: Downgrade c3p0 - bug 1442140
-    command: yum -y downgrade c3p0
+#  - name: Downgrade c3p0 - bug 1442140
+#    command: yum -y downgrade c3p0
 
-  - name: Versionlock c3p0 - bug 1442140
-    command: yum versionlock c3p0
+#  - name: Versionlock c3p0 - bug 1442140
+#    command: yum versionlock c3p0
 
   - name: Copy answers file for spacewalk setip
     template: src=answers.j2 dest=/var/tmp/answers owner=root group=root mode=0600
