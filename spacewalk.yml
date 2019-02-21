@@ -22,12 +22,17 @@
       prompt: "Login to the Spacewalk and set up and admin account. Hit Enter when ready"
       private: No
 
+    -name: "admin_user"
+      prompt: "Admin username"
+      default: "admin"
+      private: no
     - name: "admin_password"
       prompt: "Admin Password"
       default: "test123"
       private: yes
 
   roles:
-    - role: spacewalk-customisations
+    - role: spacewalk-customizations
       spacewalk_admin_password: "{{admin_password}}"
+      spacewalk_user_admin: "{{admin_user}}"
     - role: spacewalk-client
