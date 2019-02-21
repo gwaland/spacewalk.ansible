@@ -1,0 +1,14 @@
+---
+- name: Install spacecmd
+  yum: name=spacecmd
+
+- name: Add base channels
+  command: spacewalk-common-channels -v -u {{spacewalk_user_admin}} --password={{spacewalk_admin_password}}  -a x86_64 -k unlimited 'centos6*' 'epel6*' 'centos7*' 'epel7*' 'spacewalk29*centos[67]'
+  #spacecmd --user=admin --password={{spacewalk_admin_password}} -- softwarechannel_create -n {{item.name}} -l {{item.label}} -a x86_64 -c sha512
+  ignore_errors: true
+#  with_items: "{{spacewalk_repo_info}}"
+
+
+#- name: Set sync repo schedules
+#  command: spacecmd --user=admin --password={{spacewalk_admin_password}} -- softwarechannel_setsyncschedule {{item.label}} 0 30 3 ? * *
+#  with_items: "{{ spacewalk_repo_info | union(spacewalk_child_repo_info) }}"
