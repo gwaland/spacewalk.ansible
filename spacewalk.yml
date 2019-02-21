@@ -22,7 +22,7 @@
       prompt: "Login to the Spacewalk and set up and admin account. Hit Enter when ready"
       private: No
 
-    -name: "admin_user"
+    - name: "admin_user"
       prompt: "Admin username"
       default: "admin"
       private: no
