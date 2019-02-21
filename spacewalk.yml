@@ -26,6 +26,7 @@
       prompt: "Admin username"
       default: "admin"
       private: no
+
     - name: "admin_password"
       prompt: "Admin Password"
       default: "test123"
