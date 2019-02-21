@@ -24,6 +24,9 @@ spacewalk_deb_repo_info:
 
 
 spacewalk_child_deb_repo_info:
-  - {name: 'Ubuntu_Xenial_16_04_security', label: 'ubuntu-1604-security', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-security', repo: 'Ubuntu1604_security', repo_url: 'http://de.archive.ubuntu.com/ubuntu/dists/xenial-security/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
+  - {name: 'Ubuntu_Xenial_16_04_security', label: 'ubuntu-1604-security', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-security', repo: 'Ubuntu1604_security', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/xenial-security/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
+  - {name: 'Ubuntu_Xenial_16_04_security', label: 'ubuntu-1604-backports', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-backports', repo: 'Ubuntu1604_backports', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/xenial-backports/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
+  - {name: 'Ubuntu_Xenial_16_04_security', label: 'ubuntu-1604-universe', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-universe', repo: 'Ubuntu1604_security', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/xenial-universe/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
+
   - {name: 'Ubuntu_Bionic_18_04_security', label: 'ubuntu-1804-security', parent: 'ubuntu-1804', activationkey: '1-ubuntu-1804-security', repo: 'Ubuntu1804_security', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/bionic-security/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
 
