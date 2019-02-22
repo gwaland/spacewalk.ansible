@@ -52,7 +52,7 @@
 
   - name: Install spacewalk
     command: spacewalk-setup --answer-file=/var/tmp/answers
-             creates=/var/satellite
+             creates=/var/satellite/redhat
   #- template: src=iptables.j2 dest=/etc/sysconfig/iptables owner=root group=root mode=0600
   #  notify: restart_iptables
 
