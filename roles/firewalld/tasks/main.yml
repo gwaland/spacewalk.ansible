@@ -45,3 +45,8 @@
     state: enabled
   with_items: "{{ firewall_allowed_udp_ports }}"
 
+
+- name: Restart firewalld service
+  service:
+    name: firewalld
+    state: restarted
