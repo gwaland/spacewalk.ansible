@@ -1,0 +1,47 @@
+---
+
+#- name: add http firewall
+#  firewalld:
+#    service: http
+#    permanent: true
+#    state: enabled
+#
+#- name: add https firewall
+#  firewalld:
+#    service: https
+#    permanent: true
+#    state: enabled
+#
+#- name: add tftp firewall
+#  firewalld:
+#    port: 69/udp
+#    permanent: true
+#    state: enabled
+#
+#- name: spacewalk push firewall
+#  firewalld:
+#    port: 5222/tcp
+#    permanent: true
+#    state: enabled
+#
+#- name: spacewalk push firewall
+#  firewalld:
+#    port: 52i69/tcp
+#    permanent: true
+#    state: enabled
+
+
+- name: spacewalk firewall tcp rules
+  firewalld:
+    port: "{{ item }}/tcp"
+    permanent: true
+    state: enabled
+  with_items: "{{ firewall_allowed_tcp_ports }}"
+
+- name: spacewalk firewall udp rules
+  firewalld:
+    port: "{{ item }}/udp"
+    permanent: true
+    state: enabled
+  with_items: "{{ firewall_allowed_udp_ports }}"
+
