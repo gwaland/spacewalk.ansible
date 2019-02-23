@@ -18,15 +18,60 @@ spacewalk_enable_tftp: Y
 spacewalk_admin_password: test123
 spacewalk_scripts_dir: /opt/spacewalk-scripts/
 
+spacewalk_deb_channel_info:
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')'\'", label: "ubuntu-1604-amd64-xenial", arch: "amd64-deb", checksum: "sha256"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')'\'", label: "ubuntu-1804-amd64-bionic", arch: "amd64-deb", checksum: "sha256"}
+
+spacewalk_child_deb_channel_info:
+
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' backports\'", label: "ubuntu-1604-amd64-xenial-backports", parent: "ubuntu-1604-amd64-xenial", arch: "amd64-deb", checksum: "sha256"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' security\'", label: "ubuntu-1604-amd64-xenial-security", parent: "ubuntu-1604-amd64-xenial", arch: "amd64-deb", checksum: "sha256"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' updates\'", label: "ubuntu-1604-amd64-xenial-updates", parent: "ubuntu-1604-amd64-xenial", arch: "amd64-deb", checksum: "sha256"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' updates\'", label: "ubuntu-1804-amd64-bionic-updates", parent: "ubuntu-1804-amd64-bionic", arch: "amd64-deb", checksum: "sha256"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' backports\'", label: "ubuntu-1804-amd64-bionic-backports", parent: "ubuntu-1804-amd64-bionic", arch: "amd64-deb", checksum: "sha256"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' security\'", label: "ubuntu-1804-amd64-bionic-security", parent: "ubuntu-1804-amd64-bionic", arch: "amd64-deb", checksum: "sha256"}
+
+
 spacewalk_deb_repo_info:
- - {name: 'Ubuntu_Xenial_16_04', label: 'ubuntu-1604', repo: 'Ubuntu1604', activationkey: '1-ubuntu-1604', repo_url: 'http://de.archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
- - {name: 'Ubuntu_Bionic_18_04', label: 'ubuntu-1804', repo: 'Ubuntu1804', activationkey: '1-ubuntu-1804', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/bionic/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' main\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/", channel: "ubuntu-1604-amd64-xenial"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' multiverse\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial/multiverse/binary-amd64/", channel: "ubuntu-1604-amd64-xenial"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' restricted\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial/restricted/binary-amd64/", channel: "ubuntu-1604-amd64-xenial"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' universe\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial/universe/binary-amd64/", channel: "ubuntu-1604-amd64-xenial"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' main backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-backports/main/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-backports"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' main security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-security/main/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-security"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' main updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-updates/main/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-updates"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' multiverse backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-backports/multiverse/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-backports"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' multiverse security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-security/multiverse/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-security"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' multiverse updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-updates/multiverse/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-updates"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' restricted backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-backports/restricted/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-backports"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' restricted security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-security/restricted/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-security"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' restricted updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-updates/restricted/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-updates"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' universe backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-backports/universe/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-backports"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' universe security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-security/universe/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-security"}
+ - {name: "\'Ubuntu 16.04 '('amd64')''('Xenial')' universe updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/xenial-updates/universe/binary-amd64/", channel: "ubuntu-1604-amd64-xenial-updates"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' main\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/binary-amd64/", channel: "ubuntu-1804-amd64-bionic"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' multiverse\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic/multiverse/binary-amd64/", channel: "ubuntu-1804-amd64-bionic"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' restricted\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic/restricted/binary-amd64/", channel: "ubuntu-1804-amd64-bionic"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' universe\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic/universe/binary-amd64/", channel: "ubuntu-1804-amd64-bionic"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' main security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-security/main/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-security"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' main updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-updates/main/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-updates"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' multiverse security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-security/multiverse/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-security"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' multiverse updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-updates/multiverse/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-updates"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' restricted security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-security/restricted/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-security"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' restricted updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-updates/restricted/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-updates"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' universe security\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-security/universe/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-security"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' universe updates\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-updates/universe/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-updates"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' universe backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-backports/universe/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-backports"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' restricted backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-backports/restricted/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-backports"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' multiverse backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-backports/multiverse/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-backports"}
+ - {name: "\'Ubuntu 18.04 '('amd64')''('Bionic')' main backports\'", repo: "http://archive.ubuntu.com/ubuntu/dists/bionic-backports/main/binary-amd64/", channel: "ubuntu-1804-amd64-bionic-backports"}
 
 
-spacewalk_child_deb_repo_info:
-  - {name: 'Ubuntu_Xenial_16_04_security', label: 'ubuntu-1604-security', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-security', repo: 'Ubuntu1604_security', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/xenial-security/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
-  - {name: 'Ubuntu_Xenial_16_04_backports', label: 'ubuntu-1604-backports', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-backports', repo: 'Ubuntu1604_backports', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/xenial-backports/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
-  - {name: 'Ubuntu_Xenial_16_04_universe', label: 'ubuntu-1604-universe', parent: 'ubuntu-1604', activationkey: '1-ubuntu-1604-universe', repo: 'Ubuntu1604_security', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/xenial-universe/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
 
-  - {name: 'Ubuntu_Bionic_18_04_security', label: 'ubuntu-1804-security', parent: 'ubuntu-1804', activationkey: '1-ubuntu-1804-security', repo: 'Ubuntu1804_security', repo_url: 'http://archive.ubuntu.com/ubuntu/dists/bionic-security/main/binary-amd64/', arch: 'amd64-deb', checksum: 'sha256'}
+
+
+
+
+
+
 
