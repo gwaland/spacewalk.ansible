@@ -37,7 +37,7 @@
   when: ansible_distribution == "CentOS"
 
 - name: register with spacewalk server
-  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-centos-{{ansible_distribution_major_version}}-{{ansible_architecture}}
+  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-centos{{ansible_distribution_major_version}}-{{ansible_architecture}}
   when: ansible_distribution == "CentOS"
   ignore_errors: true
 
