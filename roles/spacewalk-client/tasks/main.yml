@@ -37,11 +37,11 @@
   when: ansible_distribution == "CentOS"
 
 - name: register with spacewalk server
-  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-centos-{{ansible_distribution_major_version}}-epel
+  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-centos-{{ansible_distribution_major_version}}-{{ansible_architecture}}
   when: ansible_distribution == "CentOS"
   ignore_errors: true
 
 - name: register with spacewalk server
-  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-ubuntu-{{ansible_distribution_version.split('.')|join('')}}-security
-  when: ansible_distribution == "Ubuntu"
+  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-ubuntu-{{ansible_distribution_version}}-amd64-{{ansible_distribution_release}}-security
+  when: ansible_distribution == "Ubuntu" and ansible_architecture == "x86_64"
   ignore_errors: true
