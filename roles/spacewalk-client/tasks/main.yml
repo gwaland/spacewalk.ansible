@@ -41,6 +41,6 @@
   ignore_errors: true
 
 - name: register with spacewalk server
-  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-ubuntu-{{ansible_distribution_version}}-amd64-{{ansible_distribution_release}}-security
+  command: rhnreg_ks --serverUrl=http://{{ spacewalk_host }}/XMLRPC --activationkey=1-ubuntu-{{ansible_distribution_version.split(".")[0]}}{{ansible_distribution_version.split(".")[1]}}-amd64-{{ansible_distribution_release}}
   when: ansible_distribution == "Ubuntu" and ansible_architecture == "x86_64"
   ignore_errors: true
